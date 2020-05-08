@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CaloCalculator.Migrations
 {
     [DbContext(typeof(CaloCalculatorContext))]
-    [Migration("20200508152642_InitalDBCreation")]
-    partial class InitalDBCreation
+    [Migration("20200508155322_InitialDBCreation")]
+    partial class InitialDBCreation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -97,9 +97,6 @@ namespace CaloCalculator.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
-
-                    b.Property<int?>("TypeId")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

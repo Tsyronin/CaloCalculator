@@ -17,7 +17,7 @@ namespace CaloCalculator.Models
         public string Name { get; set; }
 
         [Display(Name = "Type")]
-        public int? TypeId { get; set; }
+        public int? IngrTypeId { get; set; }
 
         public ICollection<Component> Components { get; set; }
     }
