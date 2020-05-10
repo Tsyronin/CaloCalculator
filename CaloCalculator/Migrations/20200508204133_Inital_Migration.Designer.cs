@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CaloCalculator.Migrations
 {
     [DbContext(typeof(CaloCalculatorContext))]
-    [Migration("20200508155322_InitialDBCreation")]
-    partial class InitialDBCreation
+    [Migration("20200508204133_Inital_Migration")]
+    partial class Inital_Migration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -91,6 +91,9 @@ namespace CaloCalculator.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int?>("IngrTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("KcalsPer100g")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")

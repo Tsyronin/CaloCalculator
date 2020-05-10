@@ -16,6 +16,11 @@ namespace CaloCalculator.Models
         [MaxLength(50)]
         public string Name { get; set; }
 
+        [Display(Name = "Kcals per 100g")]
+        [Required(ErrorMessage = "This field must not be empty")]
+        [Range(1, int.MaxValue, ErrorMessage = "Please enter a value bigger than {1}")]
+        public int KcalsPer100g { get; set; }
+
         [Display(Name = "Type")]
         public int? IngrTypeId { get; set; }
 

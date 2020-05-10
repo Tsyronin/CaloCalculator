@@ -17,6 +17,7 @@ namespace CaloCalculator.Models
         public string Name { get; set; }
 
         [Display(Name = "Kcals per 100g")]
+        [Range(1, int.MaxValue, ErrorMessage = "Please enter a value bigger than {1}")]
         public int? KcalsPer100g { get; set; }
 
         public ICollection<Component> Components { get; set; }

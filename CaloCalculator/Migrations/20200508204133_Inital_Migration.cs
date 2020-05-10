@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CaloCalculator.Migrations
 {
-    public partial class InitialDBCreation : Migration
+    public partial class Inital_Migration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -62,6 +62,7 @@ namespace CaloCalculator.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(maxLength: 50, nullable: false),
+                    KcalsPer100g = table.Column<int>(nullable: false),
                     IngrTypeId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>

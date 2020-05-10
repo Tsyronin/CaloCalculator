@@ -91,6 +91,9 @@ namespace CaloCalculator.Migrations
                     b.Property<int?>("IngrTypeId")
                         .HasColumnType("int");
 
+                    b.Property<int>("KcalsPer100g")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
