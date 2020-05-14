@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CaloCalculator.Models;
 using CaloCalculator.ViewModels;
+using SQLitePCL;
 
 namespace CaloCalculator.Controllers
 {
@@ -46,14 +47,17 @@ namespace CaloCalculator.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutRecord(int id, Record record)
+        public async Task<IActionResult> PutRecord(int id, RecordViewModel recordVM)
         {
-            if (id != record.Id)
+            var oldRecord = _context.Records.Find(id);
+
+            if (oldRecord == null)
             {
-                return BadRequest();
+                return NotFound();
             }
 
-            _context.Entry(record).State = EntityState.Modified;
+            oldRecord.DishId = recordVM.DishId;
+            oldRecord.Grams = recordVM.Grams;
 
             try
             {
