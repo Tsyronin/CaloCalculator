@@ -62,6 +62,7 @@ namespace CaloCalculator.Controllers
 
             foreach (var comp in componentVMs)
             {
+                if (!(_context.Ingredients.Any(i => i.Id == comp.IngredientId))) return BadRequest();
                 Component component = new Component()
                 {
                     DishId = dish.Id,
@@ -117,6 +118,7 @@ namespace CaloCalculator.Controllers
 
             foreach(var comp in componentVMs)
             {
+                if (!(_context.Ingredients.Any(i => i.Id == comp.IngredientId))) return BadRequest();
                 Component component = new Component()
                 {
                     DishId = dish.Id,

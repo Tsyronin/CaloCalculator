@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CaloCalculator</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <h1>CaloCalculator</h1>
+    <h3>Add IngrType</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addIngrType()">
+        <input type="text" id="add-name" placeholder="New IngrType">
+        <!--<input type="text" id="add-info" placeholder="New Info Category">-->
+        <input type="submit" value="Add">
+    </form>
+
+    <div id="editIngrType">
+        <h3>Edit</h3>
+        <form action="javascript:void(0);" onsubmit="updateIngrType()">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-name">
+            <!--<input type="text" id="edit-info">-->
+            <input type="submit" value="Save">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <!--<th>Info</th>-->
+        </tr>
+        <tbody id="ingrTypes"></tbody>
+    </table>
+
+    <script src="js/lab2.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getIngrTypes();
+    </script>
+</body>
+</html>
